@@ -25,17 +25,18 @@ int main(int argc, char* argv[]){
 						isRunning = false;
 				}
 				//set the draw colour so background is white
-				SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+				SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
 				//clear screen
 				SDL_RenderClear(renderer);
 				//set the draw colour for our point
-				SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+				SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 				//render point
 				SDL_RenderDrawPoint(renderer, posX, posY);
 				//present point
 				SDL_RenderPresent(renderer);
 
-				posY = (posY < 640) ? posY + 1 : posY;
+				posY++;
+				if (posY > 640){ posY = 0; }
 			}
 		}
 	}
