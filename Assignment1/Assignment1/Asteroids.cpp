@@ -15,13 +15,16 @@ int asteroid_init(struct Asteroid *asteroid)
 	asteroid->lifespan = number1;
 	number1 = rand() % 10 + 1;
 	asteroid->size = 20;
-	number = (rand() / 1000000000 + 1) / 3.77f;
-	asteroid->color.r = number;
-	number = (rand() / 1000000000 + 1) / 3.77f;
-	asteroid->color.b = number;
-	number = (rand() / 1000000000 + 1) / 3.77f;
-	asteroid->color.g = number;
-	asteroid->color.a = 1.0f;
+	number1 = (rand() / 100);
+	printf("x: %d\n", number1);
+	asteroid->color.r = number1;
+	number1 = (rand() / 100);
+	printf("x: %d\n", number1);
+	asteroid->color.b = number1;
+	number1 = (rand() / 100);
+	printf("x: %d\n", number1);
+	asteroid->color.g = number1;
+	asteroid->color.a = 255;
 
 	/*Initiliaze position speed and driection to random values*/
 	number = (float)((rand() % 100) * 0.9789687f - 50);
@@ -41,7 +44,7 @@ int asteroid_init(struct Asteroid *asteroid)
 	else{
 		number -= 0.2;
 	}
-	printf("y: %f\n", number);
+	//printf("y: %f\n", number);
 	asteroid->dir.x = number;
 	number = (float)((rand() % 300) * 0.9789687f - 150);
 	number = number / 180;
@@ -51,7 +54,7 @@ int asteroid_init(struct Asteroid *asteroid)
 	else{
 		number -= 0.7;
 	}
-	printf("y: %f\n", number);
+	//printf("y: %f\n", number);
 	asteroid->dir.y = number;
 	number = (float)((rand() % 300) * 0.9789687f - 150);
 	asteroid->dir.z = number;
