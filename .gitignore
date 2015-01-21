@@ -52,3 +52,8 @@ Assignment1/Assignment1/Debug/Main.obj
 *.idb
 *.log
 *.zip
+Assignment1/Assignment1/Debug/Main.obj
+*.pdb
+Assignment1/AsteroidsMania/SDL2.dll
+*.exe
+*.dll
