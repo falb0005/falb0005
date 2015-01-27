@@ -16,9 +16,9 @@ void GameEngine::Initialize()
 {
 	SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER);
 
-	_window = SDL_CreateWindow("CST8237 Lab",
+	_window = SDL_CreateWindow("Asteroid Mania",
 		SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-		640, 640,
+		640, 480,
 		SDL_WINDOW_SHOWN);
 
 	_renderer = SDL_CreateRenderer(_window, -1, SDL_RENDERER_ACCELERATED);
@@ -49,7 +49,7 @@ void GameEngine::Update()
 void GameEngine::Draw()
 {
 	// Set the draw colour for screen clearing.
-	SDL_SetRenderDrawColor(_renderer, 255, 255, 255, 255);
+	SDL_SetRenderDrawColor(_renderer, 0, 0, 0, 0);
 
 	// Clear the renderer with the current draw colour.
 	SDL_RenderClear(_renderer);

@@ -8,6 +8,7 @@
 
 #include "MathUtils.h"
 #include "Player.h"
+#include "Asteroid.h"
 #include "Timer.h"
 
 // Forward declaring our renderer and window.

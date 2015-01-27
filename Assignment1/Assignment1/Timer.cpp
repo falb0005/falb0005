@@ -12,9 +12,13 @@ void Timer::Update()
 	{
 		_oldTime = _currentTime;
 		_currentTime = SDL_GetTicks();
-		_deltaTime = (_currentTime - _oldTime) / 1000;
+		_deltaTime = (_currentTime - _oldTime) / 1000.0f;
 
 		_elapsedTime += _deltaTime;
+
+		if (_deltaTime == 0){
+			_deltaTime = 0.001;
+		}
 
 		if (_duration > 0.0f && _elapsedTime >= _duration)
 		{
