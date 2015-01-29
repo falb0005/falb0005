@@ -90,6 +90,8 @@ void Asteroid::Update(float dt)
 
 void Asteroid::Draw(SDL_Renderer *renderer, float dt)
 {
+	if (_killedFlag == false)
+	{
 		SDL_SetRenderDrawColor(renderer, (int)color.w, (int)color.y, (int)color.x, (int)color.z);
 		SDL_RenderDrawPoint(renderer, _transform.position.x - 5, _transform.position.y + 5);
 		SDL_RenderDrawPoint(renderer, _transform.position.x, _transform.position.y + 5);
@@ -132,4 +134,10 @@ void Asteroid::Draw(SDL_Renderer *renderer, float dt)
 		SDL_RenderDrawPoint(renderer, _transform.position.x + 4, _transform.position.y - 4);
 		SDL_RenderDrawPoint(renderer, _transform.position.x, _transform.position.y - 5);
 		SDL_RenderDrawPoint(renderer, _transform.position.x + 5, _transform.position.y - 5);
+	}
+}
+
+Vector3 Asteroid::Get_Position()
+{
+	return _transform.position;
 }

@@ -1,28 +1,28 @@
-#include "Player.h"
+#include "Missile.h"
 #include <stdio.h>
 #include <math.h>
 #include <SDL.h>
 
-Player::Player() : GameObject()
+Missile::Missile() : GameObject()
 {
-	_transform.position = { 320.0f, 240.0f, 0.0f };
-	_transform.rotation = { 320.0f, 230.0f, 0.0f };
+	_transform.position = { 0.0f, 0.0f, 0.0f };
+	_transform.rotation = { 0.0f, 0.0f, 0.0f };
 	_directionVector = { 0.0f, 0.0f, 0.0f };
-	_speed = 80;
-	_rotationSpeed = 100;
-	_playerSpeed = 0;
+	_speed = 250;
+	_missileSpeed = 0;
 }
 
-Player::~Player()
-{
-}
-
-void Player::Initialize()
+Missile::~Missile()
 {
 
 }
 
-void Player::Update(float dt)
+void Missile::Initialize()
+{
+
+}
+
+void Missile::Update(float dt)
 {
 	_transform.position.y += (_speed * (_directionVector.y*0.1f)) * (1 * dt);
 	_transform.rotation.y += (_speed * (_directionVector.y*0.1f)) * (1 * dt);
@@ -54,48 +54,48 @@ void Player::Update(float dt)
 	}
 }
 
-void Player::Draw(SDL_Renderer *renderer, float dt)
+void Missile::Draw(SDL_Renderer *renderer, float dt)
 {
 	SDL_RenderDrawLine(renderer, _transform.position.x, _transform.position.y, _transform.rotation.x, _transform.rotation.y);
 }
 
-void Player::Set_Position(Vector3 position)
+void Missile::Set_Position(Vector3 position)
 {
 	_transform.position = position;
 }
 
-Vector3 Player::Get_Position()
+Vector3 Missile::Get_Position()
 {
 	return this->_transform.position;
 }
 
-void Player::Set_PlayerSpeed(int playerSpeed)
+void Missile::Set_MissileSpeed(int missileSpeed)
 {
-	_playerSpeed = playerSpeed;
+	_missileSpeed = missileSpeed;
 }
 
-int Player::Get_PlayerSpeed()
+int Missile::Get_MissileSpeed()
 {
-	return _playerSpeed;
+	return _missileSpeed;
 }
 
 
-void Player::Set_DirectionVector(Vector3 directionVector)
+void Missile::Set_DirectionVector(Vector3 directionVector)
 {
 	_directionVector = directionVector;
 }
 
-Vector3 Player::Get_DirectionVector()
+Vector3 Missile::Get_DirectionVector()
 {
 	return _directionVector;
 }
 
-Vector3 Player::Get_PlayerRotation()
+Vector3 Missile::Get_MissileRotation()
 {
 	return _transform.rotation;
 }
 
-void Player::Set_PlayerRotation(Vector3 rotation)
+void Missile::Set_MissileRotation(Vector3 rotation)
 {
 	_transform.rotation = rotation;
 }

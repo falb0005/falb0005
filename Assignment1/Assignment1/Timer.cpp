@@ -16,10 +16,6 @@ void Timer::Update()
 
 		_elapsedTime += _deltaTime;
 
-		if (_deltaTime == 0){
-			_deltaTime = 0.001;
-		}
-
 		if (_duration > 0.0f && _elapsedTime >= _duration)
 		{
 			Stop();

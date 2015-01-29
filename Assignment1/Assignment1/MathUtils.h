@@ -34,4 +34,8 @@ class MathUtils
 public:
 	static float ToRadians(float degrees);
 	static float ToDegrees(float radians);
+	static float Calculate_Ship_Vector(int, int, int, int);
+	static float Calculate_Ship_X_Vector(int, int);
+	static float Calculate_Ship_Y_Vector(int, int);
+	static float Calculate_Distance(float, float, float, float);
 };
