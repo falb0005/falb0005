@@ -56,46 +56,47 @@ void Player::Update(float dt)
 
 void Player::Draw(SDL_Renderer *renderer, float dt)
 {
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 	SDL_RenderDrawLine(renderer, _transform.position.x, _transform.position.y, _transform.rotation.x, _transform.rotation.y);
 }
 
-void Player::Set_Position(Vector3 position)
+void Player::SetPosition(Vector3 position)
 {
 	_transform.position = position;
 }
 
-Vector3 Player::Get_Position()
+Vector3 Player::GetPosition()
 {
 	return this->_transform.position;
 }
 
-void Player::Set_PlayerSpeed(int playerSpeed)
+void Player::SetPlayerSpeed(int playerSpeed)
 {
 	_playerSpeed = playerSpeed;
 }
 
-int Player::Get_PlayerSpeed()
+int Player::GetPlayerSpeed()
 {
 	return _playerSpeed;
 }
 
 
-void Player::Set_DirectionVector(Vector3 directionVector)
+void Player::SetDirectionVector(Vector3 directionVector)
 {
 	_directionVector = directionVector;
 }
 
-Vector3 Player::Get_DirectionVector()
+Vector3 Player::GetDirectionVector()
 {
 	return _directionVector;
 }
 
-Vector3 Player::Get_PlayerRotation()
+Vector3 Player::GetPlayerRotation()
 {
 	return _transform.rotation;
 }
 
-void Player::Set_PlayerRotation(Vector3 rotation)
+void Player::SetPlayerRotation(Vector3 rotation)
 {
 	_transform.rotation = rotation;
 }

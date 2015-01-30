@@ -3,6 +3,13 @@
 
 using namespace std;
 
+/**
+* \fn int main(int argc, char** argv)
+* \brief main function to start execution of the program
+* \param argc number of arguments
+* \param argv array of char pointers containing arguments
+*/
+
 int main(int argc, char** argv)
 {
 	GameEngine *engine = GameEngine::CreateInstance();

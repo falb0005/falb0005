@@ -24,14 +24,14 @@ void Asteroid::Initialize()
 	_transform.scale.y = 20;
 	number1 = (rand() / 100);
 	//printf("x: %d\n", number1);
-	color.w = number1;//red
+	_color.w = number1;//red
 	number1 = (rand() / 100);
 	//printf("x: %d\n", number1);
-	color.x = number1;//blue
+	_color.x = number1;//blue
 	number1 = (rand() / 100);
 	//printf("x: %d\n", number1);
-	color.y = number1;//green
-	color.z = 255;//a
+	_color.y = number1;//green
+	_color.z = 255;//a
 
 	/*Initiliaze position speed and driection to random values*/
 	number = (float)((rand() % 100) * 0.9789687f - 50);
@@ -90,9 +90,12 @@ void Asteroid::Update(float dt)
 
 void Asteroid::Draw(SDL_Renderer *renderer, float dt)
 {
-	if (_killedFlag == false)
+	if (_killFlag == false)
 	{
-		SDL_SetRenderDrawColor(renderer, (int)color.w, (int)color.y, (int)color.x, (int)color.z);
+		//set Render Draw Color to the color of the asteroid
+		SDL_SetRenderDrawColor(renderer, (int)_color.w, (int)_color.y, (int)_color.x, (int)_color.z);
+
+		//draw the asteroid as a star shape
 		SDL_RenderDrawPoint(renderer, _transform.position.x - 5, _transform.position.y + 5);
 		SDL_RenderDrawPoint(renderer, _transform.position.x, _transform.position.y + 5);
 		SDL_RenderDrawPoint(renderer, _transform.position.x - 4, _transform.position.y + 4);
@@ -137,7 +140,17 @@ void Asteroid::Draw(SDL_Renderer *renderer, float dt)
 	}
 }
 
-Vector3 Asteroid::Get_Position()
+Vector3 Asteroid::GetPosition()
 {
 	return _transform.position;
+}
+
+void Asteroid::SetKillFlag(bool flag)
+{
+	_killFlag = flag;
+}
+
+bool Asteroid::GetKillFlag()
+{
+	return _killFlag;
 }

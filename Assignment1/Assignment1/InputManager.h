@@ -5,7 +5,7 @@
 * \date January 27, 2015
 */
 
-#pragma once
+#pragma once // Preprocessor directive to ensure that this header will only be included once. -- Generally used on Windows
 #include <SDL_events.h>
 #include <map>
 #include <vector>

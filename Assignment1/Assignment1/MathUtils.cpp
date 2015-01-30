@@ -13,27 +13,27 @@ float MathUtils::ToRadians(float degrees)
 	return degrees * degreesToRadians;
 }
 
-float MathUtils::Calculate_Ship_Vector(int posX, int posY, int posXOffset, int posYOffset){
+float MathUtils::CalculateShipSlope(int posX, int posY, int posXOffset, int posYOffset){
 	float m = 0, b = 0;
 	m = (float)(posYOffset - posY) / (float)(posXOffset - posX);
 	return m;
 }
 
-float MathUtils::Calculate_Ship_X_Vector(int posX, int posXOffset)
+float MathUtils::CalculateShipXVector(int posX, int posXOffset)
 {
 	float x = 0;
 	x = (float)(posXOffset - posX);
 	return x;
 }
 
-float MathUtils::Calculate_Ship_Y_Vector(int posY, int posYOffset)
+float MathUtils::CalculateShipYVector(int posY, int posYOffset)
 {
 	float y = 0;
 	y = (float)(posYOffset - posY);
 	return y;
 }
 
-float MathUtils::Calculate_Distance(float x1, float x2, float y1, float y2)
+float MathUtils::CalculateDistance(float x1, float x2, float y1, float y2)
 {
 	return sqrt(pow(x2 - x1, 2)+pow(y2 - y1, 2));
 }
